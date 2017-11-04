@@ -50,8 +50,8 @@ estimates_summary <- estimates %>%
   summarize(estimate = sum(estimate))
 
 # create time series 
-estimates_summary_ts <- ts(estimates_summary$estimate, start=c(1998,11), end=c(2017,11), frequency=12)
-estimates_summary_ts <- window(estimates_summary_ts, start=c(2000,4), end=c(2017,11))
+estimates_summary_ts <- ts(estimates_summary$estimate, start=c(1998,11), end=c(2017,10), frequency=12)
+estimates_summary_ts <- window(estimates_summary_ts, start=c(2000,4), end=c(2017,10))
 
 # make seasonal adjustment, convert to data frame 
 estimates_summary_seas <- seas(estimates_summary_ts)
